@@ -483,37 +483,7 @@ main{
 .content05-mid-img img:hover{
     transform: scale(1.1);
 }
-/*footer*/
-footer{
-    width: 100%;
-    background: black;
-    height: 135px;
-    .footer-container{
-        width: 64%;
-        height: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-        img{
-            width: 150px;
-        }
-        div{
-            display: flex;
-            a{
-                color: #fafafa;
-                font-size: 1.2rem;
-                font-weight: 700;
-            }
-            p{
-                color: #fafafa;
-                font-size: 1.2rem;
-                margin-left: 19px;
-            }
-        }
-    }
-}
+
 .icon01{
     animation: upDown3 3s ease 0s infinite ;
 }

@@ -484,37 +484,6 @@ main .content06 .content06-image img:nth-child(2) {
   transform: scale(1.1);
 }
 
-/*footer*/
-footer {
-  width: 100%;
-  background: black;
-  height: 135px;
-}
-footer .footer-container {
-  width: 64%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer .footer-container img {
-  width: 150px;
-}
-footer .footer-container div {
-  display: flex;
-}
-footer .footer-container div a {
-  color: #fafafa;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-footer .footer-container div p {
-  color: #fafafa;
-  font-size: 1.2rem;
-  margin-left: 19px;
-}
-
 .icon01 {
   -webkit-animation: upDown3 3s ease 0s infinite;
           animation: upDown3 3s ease 0s infinite;
