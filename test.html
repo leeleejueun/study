@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 5000px;
+    }
+button{
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+}
+
+</style>
+<body>
+
+    <button>버튼</button>
+    <script>
+
+        const bTn = document.querySelector('button')
+        bTn.addEventListener('click',function(){
+            window.scrollTo({
+                left:0,
+                top:0
+            });
+        })
+
+       window.addEventListener('load',function(){
+        console.log('aaaa')
+        window.scrollTo({
+                left:0,
+                top:0
+            })
+       })
+    </script>
+
+</body>
+
+</html>

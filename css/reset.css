@@ -177,11 +177,16 @@ aside {
   transform: translateY(-50%);
 }
 aside button {
+  box-sizing: border-box;
   margin-bottom: 15px;
   width: 4px;
   height: 4px;
   border-radius: 50%;
   background-color: rgb(43, 13, 75);
+}
+aside button.scale-big {
+  transition: 0.3s;
+  transform: scale(2.5);
 }
 
 /*footer*/

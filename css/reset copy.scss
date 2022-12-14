@@ -169,18 +169,20 @@ aside{
     right: 30px;
     transform: translateY(-50%);
     button{
-        box-sizing: border-box;
-        margin-bottom: 15px;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background-color: rgb(43, 13, 75);
+        span{
+            display: block;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: rgb(43, 13, 75);
+        }
+        &:hover{
+            width: 10px;
+            height: 10px;
+        }
     }
-    button.scale-big{
-        transition: 0.3s;
-        transform: scale(2.5);
-    }
-
 }
 
 /*footer*/

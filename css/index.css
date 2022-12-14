@@ -504,8 +504,7 @@ main .content06 .content06-image img:nth-child(2) {
 }
 
 aside button.active {
-  width: 12px;
-  height: 12px;
+  transform: scale(3.5);
 }
 
 /********************************************************************************************/

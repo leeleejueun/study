@@ -335,23 +335,23 @@
     <script>
       window.addEventListener('load',function(){
         const elMain = document.querySelector('main'),
+
+
+
+
+
               elAside = document.querySelector('aside'),
               elCon = document.querySelectorAll('main > div');
 
         let move=0;
-        
         elCon.forEach(function(elcontent,key){
-          elAside.innerHTML +='<button></button>';
+          elAside.innerHTML +='<button><span></span></button>';
           elcontent.addEventListener('mousewheel',function(){
             animation(key);
           })
         })
 
-
-
         let idx=0;
-
-
         const elBtns = document.querySelectorAll('aside button');
         elBtns.forEach(function(btn,key){
           btn.addEventListener('click',function(){
@@ -359,33 +359,15 @@
           })
         })
 
-        elBtns.forEach(function(btn,key){
-          btn.addEventListener('mouseover',function(){
-            btn.classList.add('scale-big');
-          })
-          btn.addEventListener('mouseleave',function(){
-            btn.classList.remove('scale-big');
-          })
-        })
-
-
-
-        
-
         function update(key){
           elBtns[idx].classList.remove('active');
           elBtns[key].classList.add('active');
           idx=key;
         }
-
-        // update(0);
-        
-          
-        
         const elHeader = document.querySelector('header');
         let hheight=elHeader.innerHeight;
-        // console.log(hheight);
-        
+        console.log(elHeader.innerHeight);
+        update(0)
         function animation(key){
           try{
             if(event.wheelDelta<0){
@@ -407,12 +389,6 @@
           update(key)
         }
       })
-
-      window.scrollTo({
-          left:0,
-          top:0
-        })
-
 </script>
 
 

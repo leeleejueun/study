@@ -495,8 +495,7 @@ main{
     animation: move 50s linear infinite;
 }
 aside button.active{
-    width: 12px;
-    height: 12px;
+    transform: scale(3.5);
 }
 /********************************************************************************************/ 
 
