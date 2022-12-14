@@ -1,7 +1,8 @@
 /*main*/
 
-
 main{
+    overflow: hidden;
+    transition: 1s;
     .content01{
         width: 100%;
         height: 100vh;
@@ -492,6 +493,10 @@ main{
 }
 .move1{
     animation: move 50s linear infinite;
+}
+aside button.active{
+    width: 12px;
+    height: 12px;
 }
 /********************************************************************************************/ 
 

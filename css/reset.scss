@@ -159,6 +159,7 @@ header{
 
 /*aside*/
 aside{
+    z-index: 999;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -173,10 +174,6 @@ aside{
         height: 4px;
         border-radius: 50%;
         background-color: rgb(43, 13, 75);
-        &:nth-child(1){
-            width: 12px;
-            height: 12px;
-        }
     }
 }
 

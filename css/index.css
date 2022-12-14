@@ -1,4 +1,8 @@
 /*main*/
+main {
+  overflow: hidden;
+  transition: 1s;
+}
 main .content01 {
   width: 100%;
   height: 100vh;
@@ -497,6 +501,11 @@ main .content06 .content06-image img:nth-child(2) {
 .move1 {
   -webkit-animation: move 50s linear infinite;
           animation: move 50s linear infinite;
+}
+
+aside button.active {
+  width: 12px;
+  height: 12px;
 }
 
 /********************************************************************************************/
