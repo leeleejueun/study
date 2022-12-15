@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h2>굴려굴려 주사위</h2>
+        <figure class="dice">
+            <img src="image/01.png" alt="" id="img-dice" width="250px">
+            <figcaption></figcaption>
+        </figure>
+        <figure class="dice">
+            <img src="image/01.png" alt="" id="img-dice" width="250px">
+            <figcaption></figcaption>
+        </figure>
+        <figure class="dice">
+            <img src="image/01.png" alt="" id="img-dice" width="250px">
+            <figcaption></figcaption>
+        </figure>
+        </article>
+        <button>굴리기</button>
+    <script>
+        const elBtn = document.querySelectorAll('.dice > button'),
+        elImg = document.querySelectorAll('.dice > img'),
+        elDiv = document.querySelectorAll('.dice figcaption');
+
+        let data=[
+            {src:'./image/01.png'},
+            {src:'./image/02.png'},
+            {src:'./image/03.png'},
+            {src:'./image/04.png'},
+            {src:'./image/05.png'},
+            {src:'./image/06.png'}
+        ];
+        
+        elBtn.forEach(function(btn,key){
+            btn.onclick=function(){
+                let num=Math.ceil(Math.random()*6);
+                let a,b,c;
+                elImg[key].src=data[num-1].src;
+                elDiv[key].textContent=num;
+
+                if(key==0){
+                    let a=Number(elDiv[key].textContent);
+                    console.log(a);}
+                else if(key==1){
+                    let b=Number(elDiv[key].textContent);
+                    console.log(b);
+                }
+                else if(key==2){
+                    let c=Number(elDiv[key].textContent);
+                    console.log(c);
+                }                
+                if(a==b && b==c){
+                    alert('당첨입니다~');
+                }
+                }
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article class="self">
+        <h2> 자판기</h2>
+        <div>
+            <p class="price">1000원</p>
+            <p class="btn">
+                <button data-price="300">밀크커피(300)</button>
+                <button data-price="400">코코아(400)</button>
+                <button data-price="600">율무차(600)</button>
+                <button>초기화</button>
+            </p>
+            <p>
+                조건 ) 총금액 1000원
+                -> 원하는 커피 2잔을 선택하시오
+                -> 선택시 총금액에서 커피값을 빼시오
+                -> 잔액 부족시 메세지 출력하시오(잔액이 부족합니다.)
+                -> 초기버튼 클릭시 다시 시작하시오
+            </p>
+        </div>
+        <style>
+            .self {
+                width: 500px;
+                margin: 100px auto;
+                border: 1px solid #ddd;
+                padding: 40px;
+                text-align: center;
+            }
+
+            .price {
+                background-color: #000;
+                padding: 10px 0;
+                color: yellow;
+            }
+
+            .btn {
+                background-color: #ddd;
+                padding: 20px 0;
+            }
+
+            .btn button:last-child {
+                background-color: red;
+            }
+
+            .self p:last-child {
+                white-space: pre-line;
+                text-align: left;
+                line-height: 2;
+            }
+        </style>
+    </article>
+
+    <script>
+        const elPrice=document.querySelector('.price'),
+            elBtn=document.querySelectorAll('.btn button');
+
+        let allPrice=1000;
+
+        function numPrice(a){
+            allPrice=allPrice-a;
+            if(allPrice<0){
+                alert('금액이 부족합니다ㅠ');
+            }
+            else{
+                elPrice.textContent=`${allPrice}원`;
+            }
+        };
+
+        elBtn.forEach(function(btn,key){
+            btn.onclick=function(){
+            if(key==3){
+                alert('초기화');
+                allPrice=1000;
+                elPrice.textContent=`${allPrice}원`;
+            }
+            else{
+                let b=btn.dataset.price;
+                numPrice(b);
+            }
+        }
+        });
+    </script>
+</body>
+</html>

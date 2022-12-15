@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- for -->
+    <article class="ex1">
+        <h2>1부터 100까지 출력하시오. <button>출력</button></h2>
+        <div>1,2,3,4,5,6...</div>
+    </article>
+
+    <article class="ex2">
+        <h2>1에서 100까지 수 중에서 짝수를 출력하시오. <button>출력</button></h2>
+        <div>2,4,6,8,10,12...</div>
+    </article>
+
+    <article class="ex3">
+        <h2>1부터 100까지 수 중에서 끝자리가 3,6,9를 찾아 출력하시오. <button>출력</button></h2>
+        <div>3,6,9,13,16,19...</div>
+    </article>
+
+    <script>
+        const elEx1 = document.querySelector('.ex1 div'),
+            elEx2 = document.querySelector('.ex2 div'),
+            elEx3 = document.querySelector('.ex3 div'),
+            elbtn = document.querySelectorAll('button');
+
+        // let result = [];//전역변수
+        //result[0]=1;
+        //result.push(1);
+
+        function numFun() {
+            let result = [];
+            for (let i = 1; i <= 100; i++) {//지역변수
+                result.push(i);
+            }
+            elEx1.textContent = result;
+        }
+        //짝수
+
+        function numEven() {
+            let result = [];
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 == 0) {
+                    result.push(i);
+                }
+            }
+            elEx2.textContent = result;
+        }
+        //3,6,9
+        function num369() {
+            let result = [];
+            for (let i = 1; i <= 100; i++) {
+                if ((i % 10 == 3) || (i % 10 == 6) || (i % 10 == 9)) {//(i%10)%3==0 && i%10 !=0
+                    result.push(i);
+                }
+            }
+            elEx3.textContent = result;
+        }
+
+        // elbtn[0].onclick = numFun;
+        // elbtn[1].onclick = numEven;
+        // elbtn[2].onclick = num369;
+
+        elbtn.forEach(function (btn, key, all) {
+            btn.onclick = function () {
+                // if (key == 0) {
+                //     numFun();
+                // }
+                // else if (key == 1) {
+                //     numEven();
+                // }
+                // else {
+                //     num369();
+                // }
+
+                switch (key) {
+                    case 0: numFun(); break;
+                    case 1: numEven(); break;
+                    default: num369();
+                }
+            };
+        });
+
+
+    </script>
+
+    <article class="gugu">
+        <h2>구구단</h2>
+        <div></div>
+        <button data-num="2"> 2단 출력 </button>
+        <button data-num="3"> 3단 출력 </button>
+        <button data-num="4"> 4단 출력 </button>
+        <button data-num="13"> 13단 출력 </button>
+    </article>
+
+    <!-- <script>
+        const elGugu = document.querySelector('.gugu > div'),
+              elBtnGugu = document.querySelector('.gugu > button');
+
+    function guGu(){
+        let gugu='';
+        for(i=1; i<10; i++){
+            gugu = 2*i;
+            elGugu.innerHTML += `2 x ${i} = ${gugu} <br>`;
+        };
+    } ;
+    elBtnGugu.onclick = guGu;
+    </script> -->
+
+    <script> //선생님이 하심
+        const elGuGu = document.querySelector('.gugu > div'),
+            elBtnGuGu = document.querySelectorAll('.gugu > button');
+
+
+        function guguFun(num) {
+            let gugu = '';
+            for (i = 1; i < 10; i++) {
+                gugu += `${num} x ${i} = ${num * i} <br>`;
+            }
+            elGuGu.innerHTML = gugu;
+        }
+        elBtnGuGu.forEach(function (btn, key) {
+            btn.onclick = function () {
+                let num = btn.dataset.num; //html에서 가져옴
+                guguFun(num);
+
+                console.log(btn.dataset);
+
+                // if(key==0){
+                //     guguFun(2);
+                // }
+                // else{
+                //     guguFun(3);
+                // };
+
+                // switch(key){
+                //         case 0 : guguFun(2); break;
+                //         case 1 : guguFun(3); break;
+                // };
+            };
+        });
+
+    // elBtnGuGu[0].onclick=function(){
+    //     guguFun(2);
+    // };
+    // elBtnGuGu[1].onclick=function(){
+    //     guguFun(3);
+    // };
+    </script>
+
+    <article class="all-gugu">
+        <h2>2~9단까지 구구단 출력</h2>
+        <div></div>
+        <style>
+            .all-gugu div {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .all-gugu p {
+                border: 2px solid rgb(255, 243, 77);
+                background: rgb(252, 252, 203);
+                margin: 3%;
+                padding: 3%;
+            }
+        </style>
+    </article>
+
+    <script>
+        const elAllGugu = document.querySelector('.all-gugu div');
+        let guguTag = '';
+
+        //전체 구구단 2~9
+        for (let i = 2; i <= 9; i++) {
+            //개별 구구단 1~9
+            guguTag += '<p>';
+            for (let j = 1; j <= 9; j++) {
+                guguTag += `${i}x${j}=${i * j} <br>`;
+            }
+            guguTag += '</p>';
+        }
+        elAllGugu.innerHTML = guguTag;
+        //elAllGugu.innerHTML = 올구구단출력;
+    </script>
+
+    <article class="self">
+        <h2> 자판기</h2>
+        <div>
+            <p class="price">1000원</p>
+            <p class="btn">
+                <button data-price="300">밀크커피(300)</button>
+                <button data-price="400">코코아(400)</button>
+                <button data-price="600">율무차(600)</button>
+                <button>초기화</button>
+            </p>
+            <p>
+                조건 ) 총금액 1000원
+                -> 원하는 커피 2잔을 선택하시오
+                -> 선택시 총금액에서 커피값을 빼시오
+                -> 잔액 부족시 메세지 출력하시오(잔액이 부족합니다.)
+                -> 초기버튼 클릭시 다시 시작하시오
+            </p>
+        </div>
+        <style>
+            .self {
+                width: 500px;
+                margin: 100px auto;
+                border: 1px solid #ddd;
+                padding: 40px;
+                text-align: center;
+            }
+
+            .price {
+                background-color: #000;
+                padding: 10px 0;
+                color: yellow;
+            }
+
+            .btn {
+                background-color: #ddd;
+                padding: 20px 0;
+            }
+
+            .btn button:last-child {
+                background-color: red;
+            }
+
+            .self p:last-child {
+                white-space: pre-line;
+                text-align: left;
+                line-height: 2;
+            }
+        </style>
+    </article>
+
+    <script>
+        //        버튼은 -> 반복문을 활용해서 클릭이벤트 발생
+        //               -> 초기화 버튼일때(총금액 1000으로 설정)
+        //        (함수활용)
+        //        총금액은 -> 커피버튼을 누를때마다 연산해서 화면에 출력
+        //                -> 커피값 (dataset.price)
+        //                -> 금액 부족시 메세지 출력(if문 활용)
+        //                -> 메세지 = alert('금액이 부족합니다.');
+
+        // let allPrice = 1000;
+        // const elPrice = document.querySelector('.price'),
+        //     elBtn = document.querySelectorAll('.btn button');
+
+
+        // function numPrice(n) {
+        //     allPrice -= n;
+        //     console.log(n);
+        //     console.log(allPrice);
+        //     if (allPrice < 0) {
+        //         alert('금액이 부족합니다.');
+        //     }
+        //     else {
+        //         elPrice.textContent = `${allPrice}원`;
+        //     };
+        // };
+
+        // elBtn.forEach(function (btn, key) {
+        //     btn.onclick = function () {
+        //         if (key == 3) {
+        //             alert('초기화');
+        //             allPrice=1000;
+        //             elPrice.textContent = `${allPrice}원`;
+                    
+        //             console.log(elPrice.textContent);
+        //         }
+        //         else {
+        //             let result = btn.dataset.price;
+        //             numPrice(result);
+        //         }
+        //     }
+        // });
+/*
+        let allPrice = 1000;
+        const currentPrice = document.querySelector('.price'),
+                btns = document.querySelectorAll('.btn button');
+
+
+        btns.forEach(function(btn,key){
+            btn.onclick=function(){
+                allPrice -=Number(btn.dataset.price); //현재 남은 가격
+                currentPrice.innerHTML=`${allPrice}원`;
+
+                if(allPrice<0){
+                    alert('잔액이 부족합니다.');
+                    allPrice += Number(btn.dataset.price); //전 가격으로 돌려주는 과정
+                    currentPrice.textContent=`${allPrice}원`;
+                }
+                if(key==3){
+                    alert('초기화합니다');
+                    allPrice=1000;
+                    currentPrice.textContent=`${allPrice}원`;
+                }
+            };
+        });
+*/
+        //선생님
+        const elCoffee = document.querySelectorAll('.btn button');
+        const elPrice = document.querySelector('.price');
+        let allPrice=1000;
+
+        function coffee(key,money){
+            //일처리
+            if(allPrice<money){
+                alert('금액이 부족합니다.');
+                return;
+            }
+            if(key==3){
+                    allPrice=1000;
+            }else{
+                    allPrice=allPrice-money;
+            }            
+                elPrice.textContent=allPrice;
+        }
+
+        elCoffee.forEach(function(el,key){
+            el.onclick=function(){
+                coffee(key,Number(el.dataset.price));
+            }
+        })
+
+    </script>
+
+
+
+</body>
+
+</html>

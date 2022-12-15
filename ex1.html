@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article class="dice">
+        <div></div>
+        <div></div>
+        <div></div>
+        <button>굴리기</button>
+        <button>굴리기</button>
+        <button>굴리기</button>
+    </article>
+
+    <script>
+        const elBtn = document.querySelectorAll('.dice > button'),
+            elDiv = document.querySelectorAll('.dice > div');
+
+            elBtn.forEach(function(btn,key){
+                btn.onclick=function(){
+                    num=Math.ceil(Math.random()*6);
+                    elDiv[key].textContent=num;
+                    if(key==0){
+                        a=Number(elDiv[key].textContent);
+                        console.log(a);}
+                    else if(key==1){
+                        b=Number(elDiv[key].textContent);
+                        console.log(b);
+                    }
+                    else if(key==2){
+                        c=Number(elDiv[key].textContent);
+                        console.log(c);
+                    }
+                    
+                    if(a==b==c){
+                        alert('당첨입니다~');
+                    }
+                }
+            })
+        
+    </script>
+</body>
+</html>

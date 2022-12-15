@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./index.js"></script>
+</head>
+<body>
+    <article class="drama">
+        <h2>드라마</h2>
+        <div class="dlist">
+            <figure>
+                <img src="./img/나의_아저씨.jpg">
+            </figure>
+        </div>
+        <div class="detail">
+            <article>
+                <figure>
+                    <img src="./img/나의_아저씨.jpg">
+                    <figcaption>
+                        <h2>나의 아저씨</h2>
+                        아이유님 사랑해
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+    </article>
+
+    <style>
+        figure{margin: 0;}
+        .drama{
+            width: 70%;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .drama .dlist{
+            width: 10%;
+        }
+        .drama .dlist figure img{
+            width: 100%;
+        }
+        .drama .detail article{
+            width: 80%;
+            padding: 5%;
+        }
+        .drama .detail article img{
+            width: 100%;
+        }
+    </style>
+</body>
+</html>

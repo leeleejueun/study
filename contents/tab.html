@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- contents -->
+
+    <article>
+        <h2>block, none</h2>
+
+        <button id="ex_btn">버튼</button>
+        <div id="ex_con">
+            contents
+        </div>
+        <style>
+            #ex_con{
+                padding: 60px; border:2px solid #000;
+                display: none;
+            }
+            #ex_con.on{
+                padding: 60px; border:2px solid #000;
+                display: block;
+            }
+        </style>
+    </article>
+    <!-- <script>
+        let i=0;
+        ex_btn.onclick = function(){
+            i++
+            if(i%2==0){
+                ex_con.style='padding: 60px; border:2px solid #000; display:none';
+            }else{
+                ex_con.style='padding: 60px; border:2px solid #000; display:block';
+        }}
+    </script> -->
+
+    <script>
+
+        ex_btn.onclick = function(){
+            //클래스,숫자
+            //contains() true, false
+            ex_con.classList.toggle('on');
+
+            let bl = ex_con.classList.contains('on');
+
+            if(bl){
+                ex_btn.textContent = '보기';
+            }else{
+                ex_btn.textContent = '닫기';
+            }
+            //document.body.classList.toggle('on');
+            
+            //let blen = ex_btn.classList.contains('on');
+            //let blen = document.body.classList.contains('on');
+            
+
+            // if(blen){
+            //     ex_con.style='padding: 60px; border:2px solid #000; display:none';
+            // }else{
+            //     ex_con.style='padding: 60px; border:2px solid #000; display:block';
+            // }
+
+            // if(blen){
+            //     ex_con.classList.add('on');
+            // }else{
+            //     ex_con.classList.remove('on');
+            // }
+        }
+    </script>
+
+    <article class="tab">
+        <div>
+            <button class="on"> tab01 </button>
+            <button> tab02 </button>
+            <button> tab03 </button>
+        </div>
+        <div class="content">
+            <div class="on"> content 01 </div>
+            <div> content 02 </div>
+            <div> content 03 </div>
+        </div>
+    </article>
+
+    <style>
+        .tab{
+            margin: 200px 0;
+            width: 500px;
+        }
+        .tab button.on{
+            background-color: #000;
+            color: #fff;
+        }
+        .tab .content{
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #000;
+        }
+        .tab .content > div{
+            font-size: 3rem;
+            display: none;
+        }
+        .tab .content > div.on{
+            display: block;
+        }
+    </style>
+
+    <script>
+        const elBtn = document.querySelectorAll('.tab button'),
+        elContent = document.querySelectorAll('.content div');
+
+        // elBtn.classList.add('on');
+        // elBtn.classList.remove('on');
+
+        // elContent.classList.add('on');
+        // elContent.classList.remove('on');
+
+        // elBtn.forEach(function(btn,key){
+        //     btn.onclick = function(){
+        //         for(i=0;i<elBtn.length;i++){
+        //             elBtn[i].classList.remove('on');
+        //             elContent[i].classList.remove('on');
+                
+        //         }
+        //         elBtn[key].classList.add('on');
+        //         elContent[key].classList.add('on');
+                
+        //     }
+        // });
+        
+        let idx=0;
+        elBtn.forEach(function(btn,key){
+            btn.onclick = function(){
+                elBtn[idx].classList.remove('on');
+                elContent[idx].classList.remove('on');
+                
+                elBtn[key].classList.add('on');
+                elContent[key].classList.add('on');
+                idx=key;
+                
+            }
+        });
+/*
+        elBtn.forEach(function(btn,key){
+            btn.onclick = function(){
+                if(key==0){
+                    elBtn[elBtn.length-1].classList.remove('on');
+                    elContent[elBtn.length-1].classList.remove('on');
+                    
+                    elBtn[key].classList.add('on');
+                    elContent[key].classList.add('on');
+                }else{
+                    elBtn[key-1].classList.remove('on');
+                    elContent[key-1].classList.remove('on');
+                    
+                    elBtn[key].classList.add('on');
+                    elContent[key].classList.add('on');
+                }
+                
+            }
+        });
+
+        elBtn.forEach(function(btn,key){
+            btn.onclick = function(){
+                //모든 버튼과 콘텐츠 ON 클래스 삭제
+                elBtn[0].classList.remove('on');
+                elContent[0].classList.remove('on');
+                
+                //클릭한 버튼은 클래스 추가
+                elBtn[1].classList.add('on');
+                elContent[1].classList.add('on');
+                
+            }
+        });
+*/
+    </script>
+
+
+
+</body>
+</html>

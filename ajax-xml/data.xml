@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?><!--띄어쓰기는 하면안됨-->
+<items>
+    <item>
+        <title>이미지 01</title>
+        <url>../img/01.jpg</url>
+        <detail><!--모든태그들은 열었으면 닫는게 필수 -->
+            고기
+        </detail>
+    </item>
+    <item>
+        <title>이미지 02</title>
+        <url>../img/02.jpg</url>
+        <detail>
+            nct 정재현
+        </detail>
+    </item>
+    <item>
+        <title>이미지 03</title>
+        <url>../img/03.jpg</url>
+        <detail>
+            노랑
+        </detail>
+    </item>
+    <!--<item>
+        <title>이미지 04</title>
+        <url>../img/04.jpg</url>
+        <detail>
+            인턴
+        </detail>
+    </item>
+    <item>
+        <title>이미지 05</title>
+        <url>../img/05.jpg</url>
+        <detail>
+            아이리스
+        </detail>
+    </item>
+    <item>
+        <title>이미지 06</title>
+        <url>../img/06.jpg</url>
+        <detail>
+            이동욱
+        </detail>
+    </item>
+    <item>
+        <title>이미지 07</title>
+        <url>../img/07.jpg</url>
+        <detail>
+            <h2>좋아하는 브랜드</h2>
+             <img src=""/>
+            브랜드 잘 모름...<br/>
+        </detail>
+    </item>
+    <item>
+        <title>이미지 08</title>
+        <url>../img/08.jpg</url>
+        <detail>
+            <h2>제일 좋아하는 노래</h2>
+             <img src=""/>
+            <br/>
+        </detail>
+    </item>
+    <item>
+        <title>이미지 09</title>
+        <url>../img/09.jpg</url>
+        <detail>
+            <h2>제일 좋아하는 과자</h2>
+             <img src=""/>
+            포카칩<br/>
+        </detail>
+    </item>
+    <item>
+        <title>이미지 10</title>
+        <url>../img/10.jpg</url>
+        <detail>
+            <h2>제목</h2>
+             <img src=""/>
+            어쩌구저쩌구... <br/>
+        </detail>
+    </item>-->
+</items>

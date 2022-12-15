@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- string -->
+
+    <script>
+        let str1 = "javascript";
+        
+        let arry=[10,20,30,40,50,60,70,80];
+
+        console.log(
+            str1.replace('s','T'),
+            str1.split('s'),
+            str1.slice(2,5), //start index, last index
+            str1.toUpperCase(), //toUpperCase, toLowerCase
+            str1.match('Z'), //null, array
+            str1.slice(4,6),
+            arry.splice(4,2,100) //index, length, value
+
+        );
+        console.log(arry);
+
+        console.log(
+            str1[0],
+            str1.charAt(0),
+            str1.substr(4,2), //index,length
+            str1.indexOf('s'),
+            str1.indexOf('a'),
+            str1.lastIndexOf('a'),
+            str1.indexOf('script'),
+            str1.indexOf('a',2),
+
+        )
+        
+    </script>
+
+    <div class="str">
+        <img src="./img/01.jpg">
+    </div>
+
+    <script>
+        const elStr = document.querySelector('.str img');
+
+        let imgUrl = elStr.getAttribute('src');/*./img/01.jpg*/
+        let reUrl = imgUrl.replace('01','02');/*./img/02.jpg*/
+
+        elStr.src= reUrl;
+        elStr.setAttribute('src',reUrl);
+
+        //문자 구간 선택
+        //./img/02.jpg
+
+        //html 문서안에 있는 이미지태그 src값을 가져온다.
+        let imgUrl2 = elStr.getAttribute('src');
+
+        //가져온 문자에서 끝에서부터 / 문자를 찾는다.(인덱스값 반환)
+        let sIdx = imgUrl2.lastIndexOf('/');
+
+        //가져온 문자에서 끝에서부터 . 문자를 찾는다.(인덱스값 반환)
+        let eIdx = imgUrl2.lastIndexOf('.');
+
+        //가져온 문자에서 /에서. 사이의 문자를 잘라온다.(이미지명 반환)
+        let imgName = imgUrl2.slice(sIdx+1,eIdx)
+
+        //slice한 이미지명을 03으로 바꾼다.
+        let reUrl2 = imgUrl2.replace(imgName,'03');
+
+        //html문서 안에 이미지 src값을 수정한다.
+        elStr.setAttribute('src',reUrl2);
+        
+        console.log(
+            reUrl2
+        )
+
+
+        //브라우저 URL 값
+        // location.hash(해시문자)
+        // location.href(전체주소)
+        // location.pathname(도메인 제외한 문자)
+
+        //변경
+        //location.href = 'naver.com'
+
+        let url = location.href;
+        //http://127.0.0.1:5500/javascript/string.html
+
+        //string.html문자를 가져오고 콘솔창에 출력하시오.
+
+        console.log(
+        url.indexOf('string.html')
+        )
+
+        console.log(
+            url.substr(33,11)
+        )
+
+        let sIdx2=url.lastIndexOf('/');
+        console.log(
+            url.slice(sIdx2+1)
+        )
+
+        let idx = url.lastIndexOf('/')+1;
+
+        console.log(
+            url.substr(idx),
+            url.slice(idx)
+            )
+
+        console.log(
+            elStr.src,
+            elStr.getAttribute('src')
+        );
+
+        /*수정방법
+        elStr.src = '';
+        elStr.setAttribute('src','02.jpg');*/
+    </script>
+</body>
+</html>
+
+오늘의 주은이 일기~!

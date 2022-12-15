@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- interval -->
+    <!-- 비동기(비순차처리) / 동기(순차처리) -->
+
+    <script>
+        let num=0;
+        let inter =setInterval(function(){
+            if(num<100){
+            num++;
+            }else{
+                clearInterval(inter);
+            }
+            //console.log(num);
+        },1000);
+
+//스크롤이벤트나 마우스 휠 이벤트에서 많이 사용
+        let timeOut = setTimeout(function(){
+            console.log('2초 알람');
+        },2000);
+        clearTimeout(timeOut);
+
+    </script>
+
+
+    <div class="ex-progress">
+        <p>100%</p>
+    </div>
+
+    <style>
+        .ex-progress{
+            width: 200px; 
+            height: 200px;
+            margin: 100 auto;
+            border-radius: 50%;
+            background: conic-gradient(red 10%, rgb(206, 206, 206) 0%);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .ex-progress > p{
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            font-size: 3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        const elProgress= document.querySelector('.ex-progress'),
+        elTxt = document.querySelector('.ex-progress > p');
+
+        /*
+        setTimeout(function(){
+            let progress = setInterval(function(){
+                if(numPer<100){
+                    numPer++;
+                }else{
+                    clearInterval(progress);
+                }
+                elProgress.style=`background: conic-gradient(red ${numPer}%, rgb(206, 206, 206) 0%);`;
+                elTxt.textContent=`${numPer}%`;
+                
+            },20);
+            
+        },100);
+        */      
+       function progressFun(n){
+            let numPer=10;
+            let progress = setInterval(function(){
+                if(numPer<n){
+                    numPer++;
+                }else{
+                    clearInterval(progress);
+                }
+                elProgress.style=`background: conic-gradient(red ${numPer}%, rgb(206, 206, 206) 0%);`;
+                elTxt.textContent=`${numPer}%`;
+                
+            },10);
+        };
+        progressFun(80);
+
+
+    </script>
+
+    <div class="photo">
+        <!-- <img src="./img/tissot_model.png">
+        <img src="./img/tissot_model.png">
+        <img src="./img/tissot_model.png"> -->
+    </div>
+
+    <style>
+        .photo img{
+            width: 20%;
+        }
+    </style>
+
+    <script>
+        const elPhoto =document.querySelector('.photo');
+        let data=[
+            {
+            name:'test01',
+            url:'./img/01.jpg',
+        },{
+            name:'test02',
+            url:'./img/02.jpg',
+        },{
+            name:'test03',
+            url:'./img/03.jpg',
+        }]
+        //data.url ->'./img/tissot_model.png'
+        data.forEach(function(obj,key){
+            setTimeout(function(){
+            elPhoto.innerHTML += `<img src="${obj.url}">`;
+            },500*key)
+    })
+    </script>
+</body>
+</html>
