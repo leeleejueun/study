@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <style>
+        .swiper-slide{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: pink;
+        }
+        .swiper-slide-active{
+            color: red;
+        }
+        .swiper-button-prev::after{
+            color: green;
+        }
+        .swiper-button-next::after{
+            color: orange;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper" style="height : 400px">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script>
+        function init(){
+            var swiper = new Swiper(".mySwiper", {
+                // slidesPerView: 3,
+                // spaceBetween: 30,
+                // slidesPerGroup: 3,
+                loop: true,
+                loopFillGroupWithBlank: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination"
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    360: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        slidesPerGroup:2,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                        // slidesPerGroup:4,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 50,
+                        // slidesPerGroup:5,
+                    },
+                },
+                on: {
+                    slideChange: function(e) {
+                        // const elActive = document.querySelector('.swiper-slide-active');
+                        // if(elActive)
+                        //     elActive.style = `color:red`;
+
+                        console.log(
+                            e.activeIndex,
+                            e.realIndex
+                        )
+                    }
+                }
+            });
+        }
+
+        window.onload = init;
+
+    </script>
+</body>
+</html>

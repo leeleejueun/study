@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form-join -->
+    <article>
+        <h2>정보입력</h2>
+        <form>
+            <ul>
+                <li>
+                    <input type="text" id="id" placeholder="아이디를 입력하시오.">
+                </li>
+                <li>
+                    <input type="email" id="mail" placeholder="이메일을 입력하시오.">
+                </li>
+                <li>
+                    <input type="tel" id="phone" placeholder="전화번호를 입력하시오.">
+                </li>
+                <li>
+                    <input type="submit" value="확인">
+                </li>
+            </ul>
+        </form>
+    </article>
+
+    <script>
+        window.addEventListener('submit',(e) =>{
+            e.preventDefault();
+            let regId = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+            let regMail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            let regTel = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+
+            //console.log(id.test(id.value))
+            // console.log(id.value)
+            if(!regId.test(id.value)){
+                id.style.outlineColor = 'red';
+                id.focus();
+                return;
+            }
+            if(!regMail.test(mail.value)){
+                mail.style.outlineColor = 'red';
+                mail.focus();
+                return;
+            }
+            if(!regTel.test(phone.value)){
+                phone.style.outlineColor = 'red';
+                phone.focus();
+                return;
+            }
+        })
+    </script>
+</body>
+</html>
