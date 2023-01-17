@@ -1,0 +1,99 @@
+body,html{
+    font-family: 'Inter',sans-serif;
+}
+.header{
+    width: 1922px;
+    height: 100%;
+    margin: 0px auto;
+}
+.hidden{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0px 0px 0px 0px);
+    margin: -1px;
+}
+
+/*header*/
+div.gnb{
+    width: 100%;
+    height: 100px;
+    background: transparent;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+ul li a{
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/*main*/
+div.visual-container{
+    width: 100%;
+    height: 347px;
+    position: relative;
+}
+div.visual-item{
+    width: 100%;
+    height: 100%;
+}
+div.visual-item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/Rectangle\ 9.jpg") no-repeat center center / cover;
+    position: relative;
+}
+div.visual-item a p{
+    color: #fff;
+    position: absolute;
+    width: 458px;
+    height: 85px;
+    top: 155px;
+    left: 732px;
+    font-style: italic;
+    font-size: 70px;
+}
+div.content01-container{
+    width: 100%;
+    position: relative;
+}
+div.content01-menu-container{
+    width: 100%;
+    margin-top: 155px;
+    text-align: center;
+}
+div.content01-menu{
+    font-size: 30px;
+    font-weight: 800;
+}
+div.content01-menu:after{
+    content: "";
+    display: block;
+    width: 98px;
+    height: 1px;
+    background: #000;
+    margin: 20px auto 31px;
+}
+p.content01-menu-text{
+    font-size: 15px;
+}
+div.content01-img01{
+    background: url("../images/img-01.jpg") no-repeat;
+}
+div.content01-img02{
+    background: url("../images/img-02.jpg") no-repeat;
+}
+div.content01-img03{
+    background: url("../images/img-03.jpg") no-repeat;
+}
+div.content01-img04{
+    background: url("../images/img-04.jpg") no-repeat;
+}
+

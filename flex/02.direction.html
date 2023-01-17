@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container{
+            padding: 12px;
+            background: gray;
+            display: flex;
+            flex-direction: row;
+            /*
+            flex-direction : 배치방향
+
+            row : 가로축 (기본값) 왼쪽부터 오른쪽으로 진행
+            row-reverse : 오름쪽부터 왼쪽
+            column : 세로방향 위에서 아래로 진행
+            column-reverse : 아래에서 위로 진행
+            */
+        }
+        div.item{
+            padding: 10px;
+            border: solid 2px black;
+            background: green;
+        }
+
+        @media screen and (max-width:768px) {
+            div.container{
+                flex-direction: column;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">aaaaaa</div>
+        <div class="item">bbbbbbbbbbbbb</div>
+        <div class="item">cc</div>
+        <div class="item">ddddddddddddddddddddddddd</div>
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Totam eaque iure, ea consequatur quos est quidem cum voluptatibus quibusdam fuga voluptas,
+    expedita ratione.
+</body>
+</html>

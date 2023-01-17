@@ -1,0 +1,130 @@
+.section1 {
+  width: 72.916%;
+  margin: 183px auto 0px;
+}
+.section1 .text h1 {
+  font-size: 64px;
+  line-height: 90px;
+}
+.section1 .text .text-sub p {
+  font-size: 48px;
+  margin: 0 auto;
+  display: inline-block;
+  font-weight: 400;
+}
+.section1 .text .text-sub p::before {
+  margin: 10px 0;
+  content: "";
+  display: block;
+  border: 1px solid black;
+  width: 100%;
+}
+.section1 .text .maps {
+  width: 72.916%;
+  margin: 32px auto 104px;
+  height: 850px;
+}
+
+.section2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 208px;
+}
+.section2 .move {
+  width: 20.83%;
+  height: 400px;
+  cursor: pointer;
+  line-height: 400px;
+  background-color: #eee;
+}
+
+.section3 {
+  background-color: #eee;
+  padding: 208px 0;
+}
+.section3 > h2 {
+  font-size: 64px;
+  padding-bottom: 77px;
+}
+.section3 .place {
+  width: 72.916%;
+  margin: 0 auto;
+}
+.section3 .place-first {
+  display: flex;
+  justify-content: center;
+}
+.section3 .place-first span {
+  position: relative;
+}
+.section3 .place-first span p {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+.section3 .place-first span a {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+}
+.section3 .place-first:nth-child(odd) span {
+  position: relative;
+}
+.section3 .place-first:nth-child(odd) span h2 {
+  text-align: left;
+}
+.section3 .place-first:nth-child(odd) span p {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+.section3 .place-first:nth-child(odd) span a {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+}
+.section3 .place-first:nth-child(even) {
+  margin: 116px 0;
+  flex-direction: row-reverse;
+}
+.section3 .place-first:nth-child(even) .img-container img {
+  order: 1;
+}
+.section3 .place-first:nth-child(even) .place-text {
+  padding-right: 5%;
+  padding-left: 0;
+}
+.section3 .place-first:nth-child(even) span h2 {
+  text-align: right;
+}
+.section3 .place-first:nth-child(even) span p {
+  text-align: right;
+}
+.section3 .place-first .img-container {
+  width: 45%;
+  height: 300px;
+  overflow: hidden;
+}
+.section3 .place-first .img-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.section3 .place-first .place-text {
+  width: 45%;
+  padding: 0 0 0 5%;
+}
+.section3 .place-first .place-text span {
+  display: block;
+}
+.section3 .place-first .place-text span:nth-child(even) {
+  margin-top: 26px;
+  font-size: 22px;
+}/*# sourceMappingURL=ex.css.map */
